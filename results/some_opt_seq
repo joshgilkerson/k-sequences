@@ -1,0 +1,36 @@
+[jurek@csurs1 ksequences]$ ./a.out 8 3
+Length: 16
+Length Lower Bound: 16
+Sequences: 1
+Sequence: 0123405671234567
+[jurek@csurs1 ksequences]$ ./a.out 9 3
+Length: 18
+Length Lower Bound: 18
+Sequences: 1
+Sequence: 012345067812356784
+[jurek@csurs1 ksequences]$ ./a.out 9 4
+Length: 13
+Length Lower Bound: 13
+Sequences: 1
+Sequence: 0123456780123
+[jurek@csurs1 ksequences]$ ./a.out 9 5
+Length: 12
+Length Lower Bound: 12
+Sequences: 1
+Sequence: 012345678012
+[jurek@csurs1 ksequences]$ ./a.out 10 5
+Length: 14
+Length Lower Bound: 14
+Sequences: 1
+Sequence: 01234567890123
+[jurek@csurs1 ksequences]$ ./a.out 10 4
+Length: 20
+Length Lower Bound: 20
+Sequences: 1
+Sequence: 01234506789123456789
+[jurek@csurs1 ksequences]$ ./a.out 10 3
+Length: 20
+Length Lower Bound: 20
+Sequences: 1
+Sequence: 01234560789236741895
+

@@ -1,0 +1,40 @@
+Sequence 2 7
+the lower bound is 13
+the obtained length is 15 with best.py
+-----------------The Sequence-------------------
+ABCDEFGADEBFCGB
+Length: 15
+-----------------Occurences by Digit------------
+A : 2
+B : 3
+C : 2
+D : 2
+E : 2
+F : 2
+G : 2
+-----------------Occurences by Pair------------
+\begin{tabular}[t]{|c|c|c|c|c|c|c|c|}
+\hline A&B&C&D&E&F&G&\ \\
+\hline &1&1&1&1&1&1&A\\
+\hline &&3&2&1&1&1&B\\
+\hline &&&1&1&1&1&C\\
+\hline &&&&2&1&1&D\\
+\hline &&&&&2&1&E\\
+\hline &&&&&&2&F\\
+\hline &&&&&&&G\\
+\hline
+\end{tabular}
+-----------------Minimal Distances--------------
+\begin{tabular}[t]{|c|c|c|c|c|c|c|c|}
+\hline A&B&C&D&E&F&G&\ \\
+\hline &1&2&1&2&2&1&A\\
+\hline &&1&2&1&1&1&B\\
+\hline &&&1&2&1&1&C\\
+\hline &&&&1&2&2&D\\
+\hline &&&&&1&2&E\\
+\hline &&&&&&1&F\\
+\hline &&&&&&&G\\
+\hline
+\end{tabular}
+1     : 13 / 21
+2     : 8 / 21

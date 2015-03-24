@@ -1,0 +1,5 @@
+See also http://arxiv.org/pdf/1105.0654
+
+A sample unknown sequence: k =3, n = 13
+The lower bound is 29. It is known that the shortest 3-sequence for n=13
+has the length >- 30 but the exact value is unknown. 

@@ -1,0 +1,55 @@
+---------
+radius: 2
+alphabet size: 1
+length: 0
+result:
+[]
+---------
+radius: 2
+alphabet size: 2
+length: 2
+result:
+[0, 1]
+---------
+radius: 2
+alphabet size: 3
+length: 3
+result:
+[0, 1, 2]
+---------
+radius: 2
+alphabet size: 4
+length: 5
+result:
+[0, 1, 2, 3, 0]
+---------
+radius: 2
+alphabet size: 5
+length: 7
+result:
+[0, 1, 2, 3, 4, 0, 1]
+---------
+radius: 2
+alphabet size: 6
+length: 12
+result:
+[0, 1, 2, 3, 2, 4, 5, 3, 4, 0, 1, 5]
+---------
+radius: 2
+alphabet size: 7
+length: 14
+result:
+[0, 1, 2, 3, 4, 2, 5, 6, 1, 4, 5, 0, 3, 6]
+---------
+radius: 2
+alphabet size: 8
+length: 17
+result:
+[0, 1, 2, 3, 4, 5, 0, 6, 3, 2, 7, 5, 1, 4, 6, 7, 0]
+---------
+radius: 2
+alphabet size: 9
+length: 21
+result:
+[0, 1, 2, 3, 4, 5, 6, 2, 7, 8, 3, 6, 0, 1, 4, 7, 0, 5, 8, 1, 4]
+---------

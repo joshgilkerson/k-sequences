@@ -9,25 +9,26 @@ type Node int
 type NodePair [2]Node
 
 type WeightedUndirectedGraph struct {
-  Rows [][]Weight
+  rows [][]Weight
+  nodeCount uint
 }
 
-func NewWeightedUndirectedGraph(nodeCount int) *WeightedUndirectedGraph {
+func NewWeightedUndirectedGraph(nodeCount uint) *WeightedUndirectedGraph {
   rows := make([][]Weight, 0, nodeCount)
-  for i := 0; i < nodeCount; i++ {
+  for i := uint(0); i < nodeCount; i++ {
     rows = append(rows, make([]Weight, i+1))
     // 0 -> Linearized[0:1]
     // 1 -> Linearized[1:3]
     // 2 -> Linearized[3:6]
   }
-  return &WeightedUndirectedGraph{rows}
+  return &WeightedUndirectedGraph{rows, nodeCount}
 }
 
 func (g *WeightedUndirectedGraph) getEdge(nodes NodePair) (w *Weight, e error) {
   w = nil
   e = nil
   for _, node := range nodes {
-    if int(node) > len(g.Rows) {
+    if uint(node) >= g.nodeCount {
       e = errors.New(fmt.Sprintf(
         "Node out of bounds: %d",
         node))
@@ -39,9 +40,9 @@ func (g *WeightedUndirectedGraph) getEdge(nodes NodePair) (w *Weight, e error) {
     return
   }
   if nodes[0] < nodes[1] {
-    w = &(g.Rows[nodes[1]][nodes[0]])
+    w = &(g.rows[nodes[1]][nodes[0]])
   } else {
-    w = &(g.Rows[nodes[0]][nodes[0]])
+    w = &(g.rows[nodes[0]][nodes[1]])
   }
   return
 }
@@ -61,4 +62,20 @@ func (g *WeightedUndirectedGraph) Get(nodes NodePair) (Weight, error) {
   } else {
     return 0, error
   }
+}
+
+type Visitor func(nodes NodePair, weight Weight)
+
+func (g *WeightedUndirectedGraph) Scan(v Visitor) error {
+  for i := uint(0); i < g.nodeCount; i++ {
+    for j := uint(0); j < i; j++ {
+      nodes := NodePair{Node(i), Node(j)}
+      if w, e := g.Get(nodes); e != nil {
+        return e
+      } else {
+        v(nodes, w)
+      }
+    }
+  }
+  return nil
 }
